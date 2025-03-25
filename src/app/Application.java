@@ -29,6 +29,7 @@ public class Application {
         Personne p11 = new Personne("Mensoif", "Gérard");
         Personne p12 = new Personne("Tim", "Vic");
         Personne p13 = new Personne("Covert", "Harry");
+        Personne p15 = new Personne("dawe", "Efad");
 
         Personne[] personnes = new Personne[] { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13 };
 
@@ -47,8 +48,12 @@ public class Application {
         System.out.println("----------------------------------------------------");
         System.out.println("Nombre de personnes : " + listeDynamique.getNombre());
         listeDynamique.afficher();
+        System.out.println("----------------------------------------------------");
+        listeDynamique.supprimer(p4);
+        listeDynamique.afficher();
         listeDynamique.vider();
         System.out.println("Nombre de personnes : " + listeDynamique.getNombre());
+        listeDynamique.afficher();
 
         /* System.out.println("----------------------------------------------------");
         System.out.println("ListePersonne_SansTrous");

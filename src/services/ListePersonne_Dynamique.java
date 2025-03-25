@@ -38,12 +38,16 @@ public class ListePersonne_Dynamique {
     public boolean supprimer(Personne p) {
         boolean suppressionReussi = false;
         Personne[] temp = new Personne[personnes.length - 1];
-        for (int i = 0; i < temp.length; i++) {
-            if (personnes[i] == p) {
-                personnes[i] = null;
-                suppressionReussi = true;
-            } else {
-                temp[i] = personnes[i];
+        int x = 0;
+        for (int i = 0; i < personnes.length; i++) {
+            if (p != personnes[i]) {
+                if (x == personnes.length-1)
+                {
+                    temp = personnes;
+                    break;
+                }
+                temp[x] = personnes[i];
+                x++;
             }
         }
         personnes = temp;
@@ -52,7 +56,7 @@ public class ListePersonne_Dynamique {
 
     public void afficher() {
         for (int i = 0; i < personnes.length; i++) {
-            System.out.println(personnes[i]);
+            System.out.println(i+1 + " " + personnes[i]);
         }
     }
 }
